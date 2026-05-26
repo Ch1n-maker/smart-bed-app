@@ -1,0 +1,55 @@
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #F5F7FA;
+}
+
+.app-phone {
+  width: 100%;
+  max-width: 420px;
+  height: 100vh;
+  max-height: 900px;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  box-shadow: 0 0 40px rgba(0,0,0,0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+@media (min-width: 421px) {
+  .app-phone {
+    height: 95vh;
+    border-radius: 24px;
+  }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(21, 101, 192, 0.4); }
+  70% { box-shadow: 0 0 0 20px rgba(21, 101, 192, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(21, 101, 192, 0); }
+}
+
+.pulse-animation {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes alarm-flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.alarm-flash {
+  animation: alarm-flash 0.5s infinite;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease-out;
+}
